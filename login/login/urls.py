@@ -17,15 +17,26 @@ from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth.views import login, logout
 #from article import settings
 admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', 'article.views.hello'),
-    url(r'^home/$', 'article.views.home'),
-    url(r'^$', 'article.views.home'),
+    #url(r'^home/$', 'article.views.auth_view'),
+    #url(r'^$', 'article.views.auth_view'),
     url(r'^language/$', 'article.views.language'),
     url(r'^article/$', 'article.views.articles'),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'main.html'}),
+    url(r'^home/$', 'django.contrib.auth.views.login', {'template_name': 'main.html'}),
+    url(r'^$', 'django.contrib.auth.views.login', {'template_name': 'main.html'}),
+    #url(r'^login/$', 'article.views.auth_view'),
+    #url(r'^auth/$', 'article.views.auth_view'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}),
+    #url(r'^logout/$', 'article.views.logout'),
+    url(r'^welcome/$', 'article.views.welcome'),
+    url(r'^invalid/$', 'article.views.invalid_login'),
+    #url(r'^accounts/login/$', 'article.views.home'),
 ]
 urlpatterns += staticfiles_urlpatterns()
