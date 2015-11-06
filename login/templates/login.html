@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+        
+	    <div class="pen-title">
+	      <h2>Login Form</h2>
+	    </div>
+	    <div class="module form-module">
+	      <div>    
+	      </div>
+	      <div class="form">
+		    <center><h2>Login to your account</h2></center>
+            {% if form.errors %}
+		        <p class="error">Sorry, that's not a valid username or password</p>
+		    {% endif %}
+		    <form action="/auth/" method="POST">{% csrf_token %}
+		      <input type="text" name="username" placeholder="Username"/>
+		      <input type="password" name="password" placeholder="Password"/>
+		     
+		      <button>Login</button>
+		    </form>
+	      </div>      
+	    </div>
+{% endblock %}	    
