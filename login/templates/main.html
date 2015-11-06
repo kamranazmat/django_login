@@ -9,10 +9,10 @@
 	      </div>
 	      <div class="form">
 		    <center><h2>Login to your account</h2></center>
-		    {% if form.errors %}
+        <!--		    {% if form.errors %}
 		        <p class="error">Sorry, that's not a valid username or password</p>
-		    {% endif %}
-		    <form action="/" method="POST">{% csrf_token %}
+		    {% endif %}-->
+		    <form action="/welcome/" method="POST">{% csrf_token %}
 		      <input type="text" name="username" placeholder="Username"/>
 		      <input type="password" name="password" placeholder="Password"/>
 		     
