@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    #'djangotoolbox'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,8 +83,14 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'storage.db'),
     }
 }
-
-
+"""
+DATABASES = {
+   'default' : {
+      'ENGINE' : 'django_mongodb_engine',
+      'NAME': 'test',
+   }
+}
+"""
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 

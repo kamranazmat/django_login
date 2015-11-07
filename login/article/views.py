@@ -13,7 +13,7 @@ def login(request):
     c = {}
     c.update(csrf(request))
     if request.user.is_authenticated():
-        return HttpResponseRedirect('/welcome')
+        return HttpResponseRedirect('/fetch')
     else:
         return render_to_response('login.html', c)
     
@@ -23,19 +23,24 @@ def auth_view(request):
     user = auth.authenticate(username=username, password=password)        
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/welcome')
+        return HttpResponseRedirect('/fetch')
     else:
         return HttpResponseRedirect('/invalid')
+        #render_to_response('login.html', {'title': "Login", 'message':"Incorrect combination, try again kamran"})
+        #return HttpResponseRedirect('/login', {'title': "Login", 'message':"Incorrect combination, try again kamran"})
     #return render_to_response('main.html', context_instance=RequestContext(request))
         
 @login_required(login_url='/login/')        
-def welcome(request):
+def fetch(request):
     #return render(request, "welcome.html", {'username':request.user.username})
-    return render_to_response('welcome.html',
-                             {'full_name': request.user.username})
+    #return render_to_response('fetch.html', {'full_name': request.user.username,  'title': "Fetch"})
+    return render_to_response('fetch.html')
     
 def invalid_login(request):
+    #error = "{% block error %}<center><h2>Incorrect combination</h2></center>{% endblock %}"
+    #request.user.message_set.create(message=message)
     return render_to_response('invalid_login.html')
+    #return render_to_response('login.html', {'title': "Login", 'message':"Incorrect combination, try again"})
  
 def logout(request):
     auth.logout(request)

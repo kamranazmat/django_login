@@ -1,0 +1,1 @@
+djangotoolbox>=1.6.0

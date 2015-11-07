@@ -38,7 +38,7 @@ urlpatterns = [
     url(r'^auth/$', 'article.views.auth_view'),
     #url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}),
     url(r'^logout/$', 'article.views.logout'),
-    url(r'^welcome/$', 'article.views.welcome'),
+    url(r'^fetch/$', 'article.views.fetch'),
     url(r'^invalid/$', 'article.views.invalid_login'),
     #url(r'^accounts/login/$', 'article.views.home'),
 ]

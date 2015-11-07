@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Fetch</title>
+{% endblock %}
+
+{% block logout %}
+<li><a href="/logout">Logout</a></li>
+{% endblock %}	s
+{% block content %}
+        
+	    <div class="pen-title">
+	      <h2>Fetch Student Details</h2>
+	    </div>
+	    <div class="module form-module">
+	      <div>    
+	      </div>
+	      <div class="form">          
+		    <form action="/auth/" method="POST">{% csrf_token %}
+		      <input type="text" name="uid" placeholder="Enter student Unique ID"/>
+		      <input type="text" name="fname" placeholder="Enter student First Name"/>
+		     
+		      <button>Fetch</button>
+		    </form>
+	      </div>   
+	      {% block error %}{% endblock %}   
+	    </div>
+{% endblock %}	    

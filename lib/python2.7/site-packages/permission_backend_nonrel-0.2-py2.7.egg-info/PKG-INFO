@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: permission-backend-nonrel
+Version: 0.2
+Summary: Django-nonrel authentication backend to support permissions and groups
+Home-page: https://github.com/django-nonrel/django-permission-backend-nonrel
+Author: Florian Hahn
+Author-email: flo@fhahn.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.4
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
